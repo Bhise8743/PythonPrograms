@@ -1,14 +1,33 @@
-from Code.Prime_Number import is_Prime
+import importlib
 
-assert is_Prime(15) == False  
-print("Test case 1 pass")
-
-assert is_Prime(11) == True
-print("Test case 2 pass ")
+module = importlib.import_module("Code.Prime_Number")
 
 
-assert is_Prime(11) != False  
-print("Test case 3 pass")
+def test_prime_number():
+    assert module.is_prime(7) is True
 
-assert is_Prime(12) == False
-print("Test case 4 pass ")
+
+def test_another_prime():
+    assert module.is_prime(13) is True
+
+
+def test_non_prime():
+    assert module.is_prime(10) is False
+
+
+def test_one():
+    assert module.is_prime(1) is False
+
+
+def test_zero():
+    assert module.is_prime(0) is False
+
+
+def test_negative():
+    assert module.is_prime(-7) is False
+
+
+def test_two():
+    assert module.is_prime(2) is True
+    
+# python -m pytest Test_Code\Test_Prime_Number.py
