@@ -1,3 +1,7 @@
+# An anagram string is a string formed by rearranging the 
+# characters of another string without changing or 
+# adding any characters.
+
 def are_anagrams(string1, string2):
     string1 = string1.replace(" ", "").lower()
     string2 = string2.replace(" ", "").lower()
